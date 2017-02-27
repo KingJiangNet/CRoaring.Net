@@ -38,11 +38,19 @@ Run the `build-win.sh` script.
 ### For Windows (using Visual Studio)
 Requirements:
 - [VS2015 Update 3](https://www.visualstudio.com/downloads/)
+- Microsoft Visual Studio 2015 Community Edition update 3 or better.
+- Within Visual Studion, have "Clang with Microsoft CodeGen" installed (found under Cross Platform Mobile Development / Visual C++ Mobile Development in the Modify features list).
 
 Build the CRoaring and CRoaring.Net projects.
 
 Microsoft CodeGen currently doesn't support the intrinsics required for building for x86_64. 
 Instead, it is recommended you build using the Linux route above with a virtual machine or [Ubuntu on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/about).
+
+##Relevant Tips when working with C99/C11-standard compliant code in Visual Studio
+
+Consider disabling Intellisense since it can't parse standard compliant C code: Tools -> Options -> Text Editor -> C/C++ -> Advanced, and set Disable Error Reporting to True.
+
+Once you have a clang CodeGen project, you can go under Configuration Properties, C/C++, Language, C Language Standard and choose between C89, C99, C11, C99 GNU, C11 GNU.
 
 ## Testing CRoaring.Net
 
