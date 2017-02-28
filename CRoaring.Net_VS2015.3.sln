@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{0F98CA82-2F80-4916-8820-2BEEEC81DBBA}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CRoaring", "src\CRoaring\CRoaring.vcxproj", "{150191FC-DB90-4B74-9F92-740498B82575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRoaring.Net", "src\CRoaring.Net\CRoaring.Net.csproj", "{7D70D5EF-A9A3-4BAD-BCEF-051347F4589A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{705A9E09-620C-4A4A-85F7-685D63C81431}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9EEF1F44-8ACC-454B-805E-A2E6C305B552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRoaring.Net.Tests", "test\CRoaring.Net.Test\CRoaring.Net.Tests.csproj", "{36E7C4F0-3346-49D2-A60A-0985E8F9107D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{150191FC-DB90-4B74-9F92-740498B82575}.Debug|x64.ActiveCfg = Debug|x64
+		{150191FC-DB90-4B74-9F92-740498B82575}.Debug|x64.Build.0 = Debug|x64
+		{150191FC-DB90-4B74-9F92-740498B82575}.Release|x64.ActiveCfg = Release|x64
+		{150191FC-DB90-4B74-9F92-740498B82575}.Release|x64.Build.0 = Release|x64
+		{7D70D5EF-A9A3-4BAD-BCEF-051347F4589A}.Debug|x64.ActiveCfg = Debug|x64
+		{7D70D5EF-A9A3-4BAD-BCEF-051347F4589A}.Debug|x64.Build.0 = Debug|x64
+		{7D70D5EF-A9A3-4BAD-BCEF-051347F4589A}.Release|x64.ActiveCfg = Release|x64
+		{7D70D5EF-A9A3-4BAD-BCEF-051347F4589A}.Release|x64.Build.0 = Release|x64
+		{36E7C4F0-3346-49D2-A60A-0985E8F9107D}.Debug|x64.ActiveCfg = Debug|x64
+		{36E7C4F0-3346-49D2-A60A-0985E8F9107D}.Debug|x64.Build.0 = Debug|x64
+		{36E7C4F0-3346-49D2-A60A-0985E8F9107D}.Release|x64.ActiveCfg = Release|x64
+		{36E7C4F0-3346-49D2-A60A-0985E8F9107D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{150191FC-DB90-4B74-9F92-740498B82575} = {705A9E09-620C-4A4A-85F7-685D63C81431}
+		{7D70D5EF-A9A3-4BAD-BCEF-051347F4589A} = {705A9E09-620C-4A4A-85F7-685D63C81431}
+		{36E7C4F0-3346-49D2-A60A-0985E8F9107D} = {9EEF1F44-8ACC-454B-805E-A2E6C305B552}
+	EndGlobalSection
+EndGlobal
