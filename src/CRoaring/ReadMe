@@ -1,0 +1,4 @@
+The ".c" & ".h" is from:
+https://github.com/lemire/CRoaringUnityBuild
+
+Currently, the "EXPORT" in ".h" is modified manually.
