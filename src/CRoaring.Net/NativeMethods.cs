@@ -25,6 +25,8 @@ namespace CRoaring
 
         [DllImport("CRoaring.dll")]
         public static extern ulong roaring_bitmap_get_cardinality(IntPtr bitmap);
+
+        [return: MarshalAs(UnmanagedType.I1)]
         [DllImport("CRoaring.dll")]
         public static extern bool roaring_bitmap_is_empty(IntPtr bitmap);
 
@@ -35,11 +37,13 @@ namespace CRoaring
         [DllImport("CRoaring.dll")]
         public static extern void roaring_bitmap_remove(IntPtr bitmap, uint value);
 
+        [return: MarshalAs(UnmanagedType.I1)]
         [DllImport("CRoaring.dll")]
         public static extern bool roaring_bitmap_contains(IntPtr bitmap, uint value);
 
         //Bitmap operations
 
+        [return: MarshalAs(UnmanagedType.I1)]
         [DllImport("CRoaring.dll")]
         public static extern bool roaring_bitmap_select(IntPtr bitmap1, uint rank, out uint element);
 
@@ -87,8 +91,11 @@ namespace CRoaring
 
         //Optimization
 
+        [return: MarshalAs(UnmanagedType.I1)]
         [DllImport("CRoaring.dll")]
         public static extern bool roaring_bitmap_run_optimize(IntPtr bitmap);
+
+        [return: MarshalAs(UnmanagedType.I1)]
         [DllImport("CRoaring.dll")]
         public static extern bool roaring_bitmap_remove_run_compression(IntPtr bitmap);
 
@@ -114,11 +121,14 @@ namespace CRoaring
 
         //Other
 
+        [return: MarshalAs(UnmanagedType.I1)]
         [DllImport("CRoaring.dll")]
         public static extern bool roaring_bitmap_equals(IntPtr bitmap1, IntPtr bitmap2);
 
+        [return: MarshalAs(UnmanagedType.I1)]
         [DllImport("CRoaring.dll")]
         public static extern bool roaring_iterate(IntPtr bitmap, IteratorDelegate iterator, IntPtr tag);
+
         public delegate bool IteratorDelegate(uint value, IntPtr tag);
 
         [DllImport("CRoaring.dll")]
