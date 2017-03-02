@@ -24,6 +24,9 @@
   <ItemGroup>
     <ClCompile Include="roaring.c" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="roaring.def" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{150191fc-db90-4b74-9f92-740498b82575}</ProjectGuid>
     <Keyword>Clang</Keyword>
@@ -89,6 +92,10 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">roaring.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">roaring.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">roaring.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">roaring.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace CRoaring
 {
@@ -10,7 +12,6 @@ namespace CRoaring
         [TestMethod]
         public void TestAdd()
         {
-
             uint[] values = new uint[] { 1, 2, 3, 4, 5, 100, 1000 };
             uint max = values.Max() + 1;
 
@@ -273,16 +274,18 @@ namespace CRoaring
         [TestMethod]
         public void TestStats()
         {
-            var bitmap = new RoaringBitmap();
-            bitmap.Add(1, 2, 3, 4, 6, 7);
-            bitmap.Add(999991, 999992, 999993, 999994, 999996, 999997);
-            var stats = bitmap.GetStatistics();
+            using (var bitmap = new RoaringBitmap())
+            {
+                bitmap.Add(1, 2, 3, 4, 6, 7);
+                bitmap.Add(999991, 999992, 999993, 999994, 999996, 999997);
+                var stats = bitmap.GetStatistics();
 
-            Assert.AreEqual(stats.Cardinality, bitmap.Cardinality);
-            Assert.AreEqual(stats.ContainerCount, 2U);
-            Assert.AreEqual(stats.ArrayContainerCount, 2U);
-            Assert.AreEqual(stats.RunContainerCount, 0U);
-            Assert.AreEqual(stats.BitsetContainerCount, 0U);
+                Assert.AreEqual(stats.Cardinality, bitmap.Cardinality);
+                Assert.AreEqual(stats.ContainerCount, 2U);
+                Assert.AreEqual(stats.ArrayContainerCount, 2U);
+                Assert.AreEqual(stats.RunContainerCount, 0U);
+                Assert.AreEqual(stats.BitsetContainerCount, 0U);
+            }
         }
 
         private static ulong OrCount(params IEnumerable<uint>[] values)
